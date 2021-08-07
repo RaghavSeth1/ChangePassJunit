@@ -1,5 +1,8 @@
 package passChange;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,8 +23,17 @@ public class ChangePasswords extends SystemPassMock {
 	public static boolean changePass(String oldPassword,String newPassword) {
 
 		/* Mock System Password */		
-		String systemPass= systemPassMock();	
+		String systemPass= systemPassMock();
 
+//******************Future Code to read regex from properties file.**********************
+		
+		/*
+		 * Properties prop = new Properties(); try { prop.load(new
+		 * FileInputStream("regex.properties")); } catch (IOException e) {
+		 * e.printStackTrace(); }
+		 */
+//***************************************************************************************
+		
 		/* At least 1 Upper case, 1 lower case ,least 1 numeric, 1 special character */
 		/* List of special chars only !@#$&*   */
 		
@@ -34,6 +46,7 @@ public class ChangePasswords extends SystemPassMock {
 		
 		/* Check if more than 4 repeated digits coming at once */
 		String pattern_chars=".*([a-zA-Z])\\1{4,}.*" ;
+	
 
 		/* No more than 4 special characters */
 		int count_special_chars = newPassword.replaceAll("[^!@#$&*]", "").length();
