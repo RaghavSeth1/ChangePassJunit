@@ -1,3 +1,4 @@
+***************Read Me updated on Feature Branch************************************
 *********************************Objective****************************************************************
 1. To create a function which returns true/false depending on the password logic as per the requirement.
 2. Create Junit Test Cases for various condition to validate the logic.
